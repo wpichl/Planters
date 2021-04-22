@@ -22,6 +22,6 @@ pio device monitor
 ```
 
 ## Folder structure
-* ```/webapp/``` - The Web Application coded in TypeScripe
+* ```/webapp/``` - The Web Application coded in TypeScript
 * ```/src/esp32cam/``` - The source code for the ESP32-Cam
 * ```/misc/``` - Circuit layout, Presentations for the project
