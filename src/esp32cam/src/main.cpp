@@ -4,6 +4,10 @@
 
 AsyncWebServer server(80);
 
+/*
+ * Data to send to the client
+ * Ghetto fixed it. Don't use it for serious purpose.
+ */
 const char index_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE HTML><html><head>
 <title>Planters</title>

@@ -1,6 +1,9 @@
 #ifndef COMMON_INCLUDES_H
 #define COMMON_INCLUDES_H
 
+/*
+ * Common includes because we are to lazy to type this everytime.
+ */
 #include <Arduino.h>
 #include <WiFi.h>
 #include <iostream>
