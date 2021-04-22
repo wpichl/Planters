@@ -53,8 +53,11 @@ void WiFiHandler::Connect()
 	 * Looping till the enum status matches the enum WL_CONNECTED
 	 * by the index which would be 3 = module successfully connected
 	 * to the router.
+	 * After 20 seconds if not getting a connecting the ESP will stop and
+	 * print 'failed'
 	 */
-	while(WiFi.status() != WL_CONNECTED)
+	unsigned long startTime = millis();
+	while(WiFi.status() != WL_CONNECTED && millis() - startTime < TIMEOUT_TIME)
 	{
 		Serial.print(".");
 		delay(1000);

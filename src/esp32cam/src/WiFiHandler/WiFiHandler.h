@@ -9,6 +9,7 @@ private:
 	char* _ssid;
 	char* _password;
 	bool _status = false;
+	const int TIMEOUT_TIME = 20000;
 public:
 	WiFiHandler(std::string ssid, std::string password);
 	~WiFiHandler();
