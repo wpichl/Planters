@@ -2,7 +2,22 @@
 This is the repository for our school project to implement an automatic plant watering system using an ESP32-Cam as a microcontroller and a WebApp to water the plant
 
 ## Used Libraries
-* [WiFi.h](https://platformio.org/lib/show/870/WiFi) - Used for connecting to an Access Point
+* [WiFi.h](https://platformio.org/lib/show/870/WiFi) - For connecting to an Access Point
+
+## How to run
+Install [Python 3](https://www.python.org/downloads/) and possibly add the binary to your PATH  
+In order to have a working serial monitor and compiler, Platform IO CLI is necessary
+```bash
+pip install -U platformio
+```
+After this head over to the root of the controller project
+```bash
+cd src/esp32cam/
+```
+Finally start the serial monitor
+```bash
+pio device monitor
+```
 
 ## Folder structure
 * ```/webapp/``` - The Web Application coded in TypeScripe
