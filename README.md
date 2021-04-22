@@ -3,6 +3,8 @@ This is the repository for our school project to implement an automatic plant wa
 
 ## Used Libraries
 * [WiFi.h](https://platformio.org/lib/show/870/WiFi) - For connecting to an Access Point
+* [AsyncTCP](https://github.com/me-no-dev/AsyncTCP) - Handle connections
+* [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer) - Send files
 
 ## How to run
 Install [Python 3](https://www.python.org/downloads/) and possibly add the binary to your PATH  
