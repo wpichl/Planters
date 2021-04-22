@@ -9,7 +9,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
-#include <Arduino.h>
+
 #ifdef ESP32
   #include <WiFi.h>
   #include <AsyncTCP.h>

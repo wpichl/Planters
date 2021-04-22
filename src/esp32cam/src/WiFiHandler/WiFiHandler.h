@@ -1,7 +1,7 @@
 #ifndef WIFIHANDLER_H
 #define WIFIHANDLER_H
 
-#include "common_includes.h"
+#include "../common_includes.h"
 
 class WiFiHandler
 {
