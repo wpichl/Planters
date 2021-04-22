@@ -14,6 +14,6 @@ public:
 	~WiFiHandler();
 	void Connect();
 	void Dump();
-	bool status();
+	bool Status();
 };
 #endif
