@@ -5,6 +5,6 @@ This is the repository for our school project to implement an automatic plant wa
 * [WiFi.h](https://platformio.org/lib/show/870/WiFi) - Used for connecting to an Access Point
 
 ## Folder structure
-* ```/WebbApp/``` - The Web Application coded in TypeScripe
-* ```/src/Controller/``` - The source code for the ESP32-Cam
-* ```/Misc/``` - Circuit layout, Presentations for the project
+* ```/webapp/``` - The Web Application coded in TypeScripe
+* ```/src/esp32cam/``` - The source code for the ESP32-Cam
+* ```/misc/``` - Circuit layout, Presentations for the project
