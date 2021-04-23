@@ -99,10 +99,16 @@ void WiFiHandler::Dump()
 /*
  * Check if the ESP is connected to the WiFi
  * Could be useful when making a REST api.
+ *
+ * Returns 'false' if the connection failed or no connection has ever been tried
+ * to establish
+ *
+ * Returns 'true' if the connection works and is established
  */
 bool WiFiHandler::Status()
 {
 	return _status;
+
 }
 
 
