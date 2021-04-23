@@ -1,9 +1,6 @@
-#ifndef COMMON_INCLUDES_H
-#define COMMON_INCLUDES_H
+#ifndef ESP32CAM_COMMON_INCLUDES_H
+#define ESP32CAM_COMMON_INCLUDES_H
 
-/*
- * Common includes because we are to lazy to type this everytime.
- */
 #include <Arduino.h>
 #include <WiFi.h>
 #include <iostream>
@@ -11,12 +8,12 @@
 #include <cstring>
 
 #ifdef ESP32
-  #include <WiFi.h>
-  #include <AsyncTCP.h>
+#include <WiFi.h>
+#include <AsyncTCP.h>
 #else
-  #include <ESP8266WiFi.h>
+#include <ESP8266WiFi.h>
   #include <ESPAsyncTCP.h>
 #endif
 #include <ESPAsyncWebServer.h>
 
-#endif
+#endif //ESP32CAM_COMMON_INCLUDES_H

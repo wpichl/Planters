@@ -18,16 +18,16 @@ const char index_html[] PROGMEM = R"rawliteral(
 
 void setup()
 {
-	Serial.begin(9600);
-	WiFiHandler wh = WiFiHandler(config::ssid, config::password);
-	wh.Dump();
-	wh.Connect();
-	server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-	{
-		request->send_P(200, "text/html", index_html);
-	});
+    Serial.begin(9600);
+    WiFiHandler wh = WiFiHandler(config::ssid, config::password);
+    wh.Dump();
+    wh.Connect();
+    server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
+    {
+        request->send_P(200, "text/html", index_html);
+    });
 
-	server.begin();
+    server.begin();
 }
 
 void loop()
