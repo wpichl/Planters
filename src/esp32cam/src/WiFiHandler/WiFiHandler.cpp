@@ -65,7 +65,7 @@ void WiFiHandler::Connect()
 
 	if(WiFi.status() != WL_CONNECTED)
 	{
-		_status = true;
+		_status = false;
 		Serial.println();
 		Serial.println("Failed");
 	}
