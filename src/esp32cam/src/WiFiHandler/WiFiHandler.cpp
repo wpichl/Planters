@@ -10,8 +10,8 @@ WiFiHandler::WiFiHandler(std::string ssid, std::string password)
 	 * cant handle std::string.
 	 * Allocate memory for the char array.
 	 */
-    _ssid = (char*)(malloc(ssid.length()));
-    _password = (char*)(malloc(password.length()));
+    _ssid = static_cast<char*>(malloc(ssid.length()));
+    _password = static_cast<char*>(malloc(password.length()));
 
 
     strcpy(_ssid, ssid.c_str());
