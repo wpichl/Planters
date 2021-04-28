@@ -10,7 +10,7 @@ public:
 	~WiFiHandler();
 	void Connect();
 	void Dump();
-	bool Status();
+	bool isConnected();
 private:
 	std::string mSSID;
 	std::string mPassword;

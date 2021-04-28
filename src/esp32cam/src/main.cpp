@@ -18,12 +18,15 @@ void setup() {
   WiFiHandler wh(config::ssid, config::password);
   wh.Dump();
   wh.Connect();
-	server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-	{
-		request->send_P(200, "text/html", index_html);
-	});
 
-	server.begin();
+  if(wh.isConnected())
+  {
+    server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
+	  {
+      request->send_P(200, "text/html", index_html);
+	  });
+    server.begin();
+  }
 }
 
 void loop() {

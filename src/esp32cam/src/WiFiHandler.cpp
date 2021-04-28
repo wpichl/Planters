@@ -92,7 +92,7 @@ void WiFiHandler::Dump()
  *
  * Returns 'true' if the connection works and is established
  */
-bool WiFiHandler::Status()
+bool WiFiHandler::isConnected()
 {
 	return mStatus;
 
