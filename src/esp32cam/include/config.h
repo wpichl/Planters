@@ -5,8 +5,8 @@
 
 namespace config 
 {
-    std::string ssid = "Rai13";
-    std::string password = "authoringtools";
+    std::string ssid = "SSID HERE";
+    std::string password = "PASSWORD HERE";
 }
 
 #endif
