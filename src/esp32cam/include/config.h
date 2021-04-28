@@ -1,7 +1,7 @@
 #ifndef CONFIG_HPP
 #define CONFIG_HPP
 
-#include "common_includes.hpp"
+#include "common_includes.h"
 
 namespace config 
 {

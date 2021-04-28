@@ -1,11 +1,13 @@
-#include "config.hpp"
-#include "WiFiHandler.hpp"
-#include "common_includes.hpp"
+#include "common_includes.h"
+#include "config.h"
+#include "WiFiHandler.h"
+
 void setup() {
-    Serial.begin(9600);
-    WiFiHandler wh(config::ssid, config::password);
-    wh.Dump();
-    wh.Connect();
+  Serial.begin(11500);
+  WiFiHandler wh(config::ssid, config::password);
+  wh.Dump();
+  wh.Connect();
+
 }
 
 void loop() {
