@@ -1,8 +1,7 @@
 #include "common_includes.h"
 #include "config.h"
 #include "WiFiHandler.h"
-
-#include <ESPAsyncWebServer.h>
+#include "ADCHandler.h"
 
 AsyncWebServer server(80);
 
@@ -13,22 +12,31 @@ const char index_html[] PROGMEM = R"rawliteral(
 <h1>test</h1>
 </body></html>)rawliteral";
 
+ADCHandler adc(config::SDA, config::SCL);
+
 void setup() {
   Serial.begin(11500);
   WiFiHandler wh(config::ssid, config::password);
   wh.Dump();
   wh.Connect();
-
+  adc.Init();
   if(wh.isConnected())
   {
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
 	  {
       request->send_P(200, "text/html", index_html);
 	  });
+
+    server.on("/sensor", HTTP_GET, [](AsyncWebServerRequest *request)
+	  {
+      request->send(200, "text/plain", (String)adc.getADC());
+	  });
     server.begin();
   }
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  Serial.print("Analog input: ");
+  Serial.println(adc.getADC());
+  delay(5000);
 }

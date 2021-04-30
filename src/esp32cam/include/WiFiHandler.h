@@ -1,5 +1,5 @@
-#ifndef WIFIHANDLER_HPP
-#define WIFIHANDLER_HPP
+#ifndef WIFIHANDLER_H
+#define WIFIHANDLER_H
 
 #include "common_includes.h"
 

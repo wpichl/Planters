@@ -3,7 +3,8 @@
 /*
  * Constructor where the wifi name and passwords gets saved.
  */
-WiFiHandler::WiFiHandler(std::string ssid, std::string password) : mSSID(ssid), mPassword(password)
+WiFiHandler::WiFiHandler(std::string ssid, std::string password) 
+	: mSSID(ssid), mPassword(password)
 {
 }
 
