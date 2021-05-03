@@ -1,4 +1,4 @@
-#include "WiFiHandler.h"
+#include "WiFiHandler.hpp"
 
 /*
  * Constructor where the wifi name and passwords gets saved.

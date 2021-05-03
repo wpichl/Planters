@@ -1,7 +1,8 @@
-function init(): void {
-    alert('Hello World!');
+function init():void{
+
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', (event)=>{
     init();
 });
+
