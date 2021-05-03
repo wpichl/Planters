@@ -5,10 +5,10 @@
 
 namespace config 
 {
-    const std::string ssid = "REPLACE WITH SSID";
-    const std::string password = "REPLACE WITH PASSWORD";
-    const int SDA = 0; // replace with sda gpio pin address
-    const int SCL = 0; // replace with scl gpio pin address
+    const std::string ssid = "Rai13";
+    const std::string password = "authoringtools";
+    const int SDA = 14; // replace with sda gpio pin address
+    const int SCL = 16; // replace with scl gpio pin address
 }
 
 #endif

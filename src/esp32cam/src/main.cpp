@@ -22,6 +22,7 @@ void setup() {
   adc.Init();
   if(wh.isConnected())
   {
+    DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
     server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
 	  {
       request->send_P(200, "text/html", index_html);
