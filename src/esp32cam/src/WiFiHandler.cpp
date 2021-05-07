@@ -3,19 +3,9 @@
 /*
  * Constructor where the wifi name and passwords gets saved.
  */
-WiFiHandler::WiFiHandler(std::string ssid, std::string password)
+WiFiHandler::WiFiHandler(std::string ssid, std::string password) 
+	: mSSID(ssid), mPassword(password)
 {
-	/*
-	 * Convert to a char array because Serial.print and WiFi.begin
-	 * cant handle std::string.
-	 * Allocate memory for the char array.
-	 */
-    _ssid = static_cast<char*>(malloc(ssid.length()));
-    _password = static_cast<char*>(malloc(password.length()));
-
-
-    strcpy(_ssid, ssid.c_str());
-    strcpy(_password, password.c_str());
 }
 
 /*
@@ -24,8 +14,6 @@ WiFiHandler::WiFiHandler(std::string ssid, std::string password)
  */
 WiFiHandler::~WiFiHandler()
 {
-	free(_ssid);
-	free(_password);
 }
 
 /*
@@ -47,7 +35,7 @@ void WiFiHandler::Connect()
 	 * Dumped from the WiFi class.
 	 */
 	WiFi.mode(WIFI_STA); // Connect to an AccessPoint
-	WiFi.begin(_ssid, _password);
+	WiFi.begin(mSSID.c_str(), mPassword.c_str());
 
 	/*
 	 * Looping till the enum status matches the enum WL_CONNECTED
@@ -65,13 +53,13 @@ void WiFiHandler::Connect()
 
 	if(WiFi.status() != WL_CONNECTED)
 	{
-		_status = false;
+		mStatus = false;
 		Serial.println();
 		Serial.println("Failed");
 	}
 	else
 	{
-		_status = true;
+		mStatus = true;
 		Serial.println();
 		Serial.println("Connected");
 		Serial.print("IP: ");
@@ -88,10 +76,10 @@ void WiFiHandler::Dump()
 	Serial.println();
 	Serial.println("--- WiFi Connection Dump ---");
 	Serial.print("SSID: ");
-	Serial.print(_ssid);
+	Serial.print(mSSID.c_str());
 	Serial.println();
 	Serial.print("Password: ");
-	Serial.print(_password);
+	Serial.print(mPassword.c_str());
 	Serial.println();
 	Serial.println("----------------------------");
 }
@@ -105,10 +93,8 @@ void WiFiHandler::Dump()
  *
  * Returns 'true' if the connection works and is established
  */
-bool WiFiHandler::Status()
+bool WiFiHandler::isConnected()
 {
-	return _status;
+	return mStatus;
 
 }
-
-

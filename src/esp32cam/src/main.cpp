@@ -1,13 +1,10 @@
 #include "common_includes.h"
-#include "WiFiHandler/WiFiHandler.h"
 #include "config.h"
+#include "WiFiHandler.h"
+#include "ADCHandler.h"
 
 AsyncWebServer server(80);
 
-/*
- * Data to send to the client
- * Ghetto fixed it. Don't use it for serious purpose.
- */
 const char index_html[] PROGMEM = R"rawliteral(
 <!DOCTYPE HTML><html><head>
 <title>Planters</title>
@@ -15,21 +12,32 @@ const char index_html[] PROGMEM = R"rawliteral(
 <h1>test</h1>
 </body></html>)rawliteral";
 
+ADCHandler adc(config::SDA, config::SCL);
 
-void setup()
-{
-	Serial.begin(9600);
-	WiFiHandler wh = WiFiHandler(config::ssid, config::password);
-	wh.Dump();
-	wh.Connect();
-	server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
-	{
-		request->send_P(200, "text/html", index_html);
-	});
+void setup() {
+  Serial.begin(11500);
+  WiFiHandler wh(config::ssid, config::password);
+  wh.Dump();
+  wh.Connect();
+  adc.Init();
+  if(wh.isConnected())
+  {
+    DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
+    server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
+	  {
+      request->send_P(200, "text/html", index_html);
+	  });
 
-	server.begin();
+    server.on("/sensor", HTTP_GET, [](AsyncWebServerRequest *request)
+	  {
+      request->send(200, "text/plain", (String)adc.getADC());
+	  });
+    server.begin();
+  }
 }
 
-void loop()
-{
+void loop() {
+  Serial.print("Analog input: ");
+  Serial.println(adc.getADC());
+  delay(5000);
 }

@@ -6,6 +6,10 @@ This is the repository for our school project to implement an automatic plant wa
 * [AsyncTCP](https://github.com/me-no-dev/AsyncTCP) - Handle connections
 * [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer) - Send files
 
+## Tools and Plugins needed to compile
+* [Visual Studio Code](https://code.visualstudio.com/) - A smart and potent Code Editor for C/C++
+* [Platform IO Plugin](https://platformio.org/platformio-ide) - To compile
+
 ## How to run
 Install [Python 3](https://www.python.org/downloads/) and possibly add the binary to your PATH  
 In order to have a working serial monitor and compiler, Platform IO CLI is necessary
