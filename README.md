@@ -5,6 +5,8 @@ This is the repository for our school project to implement an automatic plant wa
 * [WiFi.h](https://platformio.org/lib/show/870/WiFi) - For connecting to an Access Point
 * [AsyncTCP](https://github.com/me-no-dev/AsyncTCP) - Handle connections
 * [ESPAsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer) - Send files
+* [Adafruit BusIO](https://platformio.org/lib/show/6214/Adafruit%20BusIO) - Abstracting UART, I2C and SPI interfacing
+* [Adafruit ADS1X15](https://platformio.org/lib/show/342/Adafruit%20ADS1X15) - Library for ADS1015/1115 ADCs
 
 ## Tools and Plugins needed to compile
 * [Visual Studio Code](https://code.visualstudio.com/) - A smart and potent Code Editor for C/C++
