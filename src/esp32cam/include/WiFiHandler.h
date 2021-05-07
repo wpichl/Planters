@@ -17,7 +17,6 @@ private:
 	IPAddress mGateway;
 	IPAddress mSubnetmask;
 	bool mStatus = false;
-	const int TIMEOUT_TIME = 20000;
 };
 
 #endif
