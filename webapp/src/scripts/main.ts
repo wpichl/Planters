@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const fetchBtn : HTMLElement = <HTMLElement> document.getElementById("fetch");
     fetchBtn.addEventListener("click", (event) => {
-        let data  = ''
-        console.log("fetching")
+        let data  = '';
+        console.log("fetching");
         fetch('http://192.168.8.121/sensor')
             .then(function(response) {
                 return response.json();

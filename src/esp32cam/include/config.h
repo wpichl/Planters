@@ -5,10 +5,14 @@
 
 namespace config 
 {
-    const std::string ssid = "Rai13";
-    const std::string password = "authoringtools";
+    const std::string ssid = "ESP32-Cam WiFi";
     const int SDA = 14; // replace with sda gpio pin address
     const int SCL = 16; // replace with scl gpio pin address
+
+    // leave this as it is if you don't know what you are doing
+    IPAddress IP(192, 168, 0, 2);
+	IPAddress Gateway(192, 168, 0, 1);
+	IPAddress Subnetmask(255, 255, 255, 0);
 }
 
 #endif

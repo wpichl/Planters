@@ -6,14 +6,16 @@
 class WiFiHandler
 {
 public:
-    WiFiHandler(std::string ssid, std::string password);
+    WiFiHandler(std::string ssid, IPAddress IP, IPAddress gateway, IPAddress subnetmask);
 	~WiFiHandler();
 	void Connect();
 	void Dump();
 	bool isConnected();
 private:
 	std::string mSSID;
-	std::string mPassword;
+	IPAddress mIP;
+	IPAddress mGateway;
+	IPAddress mSubnetmask;
 	bool mStatus = false;
 	const int TIMEOUT_TIME = 20000;
 };
