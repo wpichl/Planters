@@ -20,7 +20,7 @@ void setup() {
   wh.Dump();
   wh.Connect();
   adc.Init();
-
+  
   if(wh.isConnected())
   {
     DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");

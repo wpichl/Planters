@@ -1,0 +1,8 @@
+--- REST API Documentation ---
+
+/sensor - Returns a JSON based Object which contains all the information read from the pump and sensor
+
+/waterable - Returns a TEXT based string which either contains "Yes" or "No" if the plant is waterable. Handled server-sided.
+
+/water?date=[current date] - POST request to server. The request gets validated and either "OK" or "FAIL" gets returned if the plant has been watered or doesnt need water right now. The paramter is for analytics for the chart.
+
