@@ -1,7 +1,7 @@
 #include "ADCHandler.h"
 
 ADCHandler::ADCHandler(int SDA, int SCL)
-    : mSDA(SDA), mSCL(SCL)
+    : I2C(0), mSDA(SDA), mSCL(SCL)
 {
 
 }

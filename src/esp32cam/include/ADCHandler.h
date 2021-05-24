@@ -11,7 +11,7 @@ public:
     int16_t getADC();
 
 private:
-    TwoWire I2C = TwoWire(0);
+    TwoWire I2C;
     Adafruit_ADS1115 ads;
     int mSDA;
     int mSCL;
