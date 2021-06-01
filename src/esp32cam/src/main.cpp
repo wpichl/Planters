@@ -22,7 +22,7 @@ static bool waterable()
 {
   bool isWaterable = false;
   int16_t temp = adc.getADC();
-  if(temp < 20500)
+  if(temp < 2100)
   {
     isWaterable = true;
   }
@@ -59,5 +59,15 @@ void setup() {
   }
 }
 
-void loop() {
+void loop()
+{
+  if(waterable())
+  {
+    digitalWrite(12, HIGH);
+  }
+  else
+  {
+    digitalWrite(12, LOW);
+  }
+  sleep(3);
 }
