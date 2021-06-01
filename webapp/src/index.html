@@ -4,34 +4,61 @@
     <meta charset="UTF-8">
     <title>Planters</title>
     <script src="../build/main.js"></script>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
             crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylesheet.css">
 <body onload="startTime()">
 <div class="header">
-    <h1 class="headline-todays-history">Todays History</h1>
-    <div class="clock" id="txt"></div>
+    <div class="row jumbotron">
+    </div>
+    <div clas="row">
+        <div class="col-sm d-flex justify-content-left">
+            <h1 class="headline-todays-history">Todays History</h1>
+        </div>
+
+    </div>
+    <canvas id="c"></canvas>
 </div>
-
-
+<div class="col-sm d-flex justify-content-right">
+    <h1 class="clock" align="right" id="txt"></h1>
+</div>
 
 <div class="container-md">
     <div class="row jumbotron">
     </div>
     <div class="row">
         <div class="col-sm d-flex justify-content-center">
-            <button type="button" id="fetch" class="btn btn-dark">Fetch current state</button>
+            <button id="info" class="btn btn"><i class="bi bi-info-circle"></i> Current State</button>
         </div>
         <div class="col-sm d-flex justify-content-center">
-            <button type="button" id="water" class="btn btn-danger">Water the plant</button>
+            <button id="water" class="btn btn"><i class="bi bi-water"></i> Start watering</button>
         </div>
     </div>
 
     <div id="output"></div>
 </div>
+
+
+<div class="container">
+    <div class="droplet" id="no1"></div>
+    <div class="droplet" id="no2"></div>
+    <div class="droplet" id="no3"></div>
+    <div class="droplet" id="no4"></div>
+    <div class="droplet" id="no5"></div>
+    <div class="droplet" id="no6"></div>
+    <div class="droplet" id="no7"></div>
+    <div class="droplet" id="no8"></div>
+    <div class="droplet" id="no9"></div>
+    <div class="droplet" id="no10"></div>
 <span id="span"></span>
+</div>
+
+
+
 </body>
 </html>
