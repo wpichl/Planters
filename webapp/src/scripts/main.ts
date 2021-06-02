@@ -1,8 +1,5 @@
 
-
-
 document.addEventListener('DOMContentLoaded', (event) => {
-
     const fetchBtn : HTMLElement = <HTMLElement> document.getElementById("fetch");
     fetchBtn.addEventListener("click", (event) => {
         let data  = '';
@@ -21,7 +18,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             });
     });
 });
-
 function startTime() {
     let today = new Date();
     let h = today.getHours();
@@ -41,4 +37,7 @@ function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+
+
+
 
