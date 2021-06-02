@@ -1,4 +1,6 @@
 
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
 
     const fetchBtn : HTMLElement = <HTMLElement> document.getElementById("fetch");
@@ -29,6 +31,10 @@ function startTime() {
     s = checkTime(s);
     document.getElementById('txt').innerHTML =
         h + ":" + m + ":" + s;
+    document.getElementById('txt2').innerHTML =
+        h + ":" + m + ":" + s;
+    document.getElementById('txt3').innerHTML =
+        h + ":" + m + ":" + s;
     let t = setTimeout(startTime, 1000);
 }
 function checkTime(i) {
@@ -36,11 +42,3 @@ function checkTime(i) {
     return i;
 }
 
-
-
-
-
-
-
-
-//# sourceMappingURL=main.js.map

@@ -1,0 +1,141 @@
+:root {
+    --backgroundColor: white;
+    --colorShadeA: rgb(2, 99, 71);
+    --colorShadeB: rgb(140, 190, 156);
+    --colorShadeC: rgb(150, 232, 195);
+    --colorShadeD: rgb(187, 232, 220);
+    --colorShadeE: rgb(200, 255, 230);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+* {
+    box-sizing: border-box;
+}
+
+.clock{
+    margin-left: 55em;
+    color: black;
+    margin-bottom: 13em;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 1rem;
+    overflow: hidden;
+    background: var(--backgroundColor);
+    background: linear-gradient(-45deg, #FAEBD7, #F0F8FF, #F5F5DC, #FAEBD7);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+.clockClass{
+    margin-right: -890px;
+}
+
+html, body {
+    width: 100%;
+    height:100%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+button {
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color:var(--colorShadeA);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+}
+.buttons{
+    align-content: center;
+    margin-right: 135em;
+    width: 120%;
+}
+button.big-button {
+    outline: none;
+    padding: 1em 2em;
+    border-radius: 1em;
+    width: 180%;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+button.big-button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+.clock2{
+    color: black;
+}
+.clockClass2{
+    margin-bottom: 40em;
+    margin-right: -800px;
+}
+.clock3{
+    color: black;
+}
+.clockClass3{
+    margin-left: -80px;
+}
+.waterButtonClass{
+    margin-right: -600px;
+}
+.btn{
+    font-size: 20px;
+}
+
+.btn:hover{
+    background-color: cornflowerblue;
+}
+
+.clockClass3{
+    margin-bottom: 40em;
+    margin-right: -1300px;
+}
+button.big-button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.375em);
+}
+
+button.big-button:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+}
+
+button.big-button:active {
+    transform: translate(0em, 0.75em);
+}
+
+button.big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+
+}
