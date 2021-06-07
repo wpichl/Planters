@@ -1,3 +1,7 @@
+function init() {
+    window.location.hash = '#first';
+    startTime();
+}
 document.addEventListener('DOMContentLoaded', (event) => {
     const fetchBtn = document.getElementById("fetch");
     fetchBtn.addEventListener("click", (event) => {
