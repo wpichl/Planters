@@ -15,6 +15,9 @@ namespace config
     const IPAddress IP(192, 168, 0, 2);
 	const IPAddress Gateway(192, 168, 0, 1);
 	const IPAddress Subnetmask(255, 255, 255, 0);
+
+    // timezone settings
+    const long gmt = 1;
 }
 
 #endif
