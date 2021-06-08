@@ -56,7 +56,7 @@ void setup() {
       request->send(200, "application/json", response);
     });
     server.begin();
-  }
+  } 
 }
 
 void loop()
