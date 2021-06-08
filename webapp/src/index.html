@@ -11,11 +11,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
             crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/navbar.css">
 
 </head>
-<body onload="startTime()">
+<body onload="init()">
 <nav>
     <a href="#first"><i class="bi bi-house-fill"></i></a>
     <a href="#second"><i class="bi bi-droplet-fill"></i></a>
@@ -56,9 +57,11 @@
         <div class="clockClass3">
             <h1 class="clock3" id="txt3"></h1>
         </div>
-
+        <div class="chart">
+            <canvas id="myChart"></canvas>
+        </div>
     </section>
 </div>
-
+<script src="chart.js"></script>
 </body>
 </html>
