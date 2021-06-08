@@ -3,8 +3,8 @@
 /*
  * Constructor where the wifi name and passwords gets saved.
  */
-WiFiHandler::WiFiHandler(std::string ssid, IPAddress IP, IPAddress gateway, IPAddress subnetmask) 
-	: mSSID(ssid), mIP(IP), mGateway(gateway), mSubnetmask(subnetmask)
+WiFiHandler::WiFiHandler(std::string ssid, IPAddress IP, IPAddress gateway, IPAddress subnetmask, std::string wifiname, std::string password)
+	: mSSID(ssid), mIP(IP), mGateway(gateway), mSubnetmask(subnetmask), mWiFiName(wifiname), mPassword(password)
 {
 }
 
@@ -21,8 +21,26 @@ WiFiHandler::~WiFiHandler()
  */
 void WiFiHandler::Connect()
 {
+	WiFi.mode(WIFI_AP_STA);
 	WiFi.softAPConfig(mIP, mGateway, mSubnetmask);
 	WiFi.softAP(mSSID.c_str());
+
+	Serial.println();
+
+	Serial.print("Connecting to Wifi");
+
+	WiFi.begin(mWiFiName.c_str(), mPassword.c_str());
+	while (WiFi.status() != WL_CONNECTED)
+	{
+		delay(500);
+		Serial.print(".");
+	}
+
+	Serial.println("");
+	Serial.println("WiFi connected");
+	Serial.println("IP address: ");
+	Serial.println(WiFi.localIP());
+
 	mStatus = true;
 }
 

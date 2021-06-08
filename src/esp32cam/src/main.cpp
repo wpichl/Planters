@@ -31,7 +31,7 @@ static bool waterable()
 void setup() {
   Serial.begin(11500);
   pinMode(12, OUTPUT);
-  WiFiHandler wh(config::ssid, config::IP, config::Gateway, config::Subnetmask);
+  WiFiHandler wh(config::ssid, config::IP, config::Gateway, config::Subnetmask, config::wifiname, config::password);
   wh.Dump();
   wh.Connect();
   adc.Init();

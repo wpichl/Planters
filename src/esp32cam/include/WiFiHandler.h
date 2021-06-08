@@ -6,7 +6,7 @@
 class WiFiHandler
 {
 public:
-    WiFiHandler(std::string ssid, IPAddress IP, IPAddress gateway, IPAddress subnetmask);
+    WiFiHandler(std::string ssid, IPAddress IP, IPAddress gateway, IPAddress subnetmask, std::string wifiname, std::string password);
 	~WiFiHandler();
 	void Connect();
 	void Dump();
@@ -16,6 +16,8 @@ private:
 	IPAddress mIP;
 	IPAddress mGateway;
 	IPAddress mSubnetmask;
+	std::string mWiFiName;
+	std::string mPassword;
 	bool mStatus = false;
 };
 
