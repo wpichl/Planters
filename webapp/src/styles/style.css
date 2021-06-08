@@ -294,9 +294,6 @@ button.big-button::before {
 .clock3{
     color: black;
 }
-.clockClass3{
-    margin-left: -130px;
-}
 .waterButtonClass{
     margin-right: -750px;
 }
@@ -309,8 +306,9 @@ button.big-button::before {
 }
 
 .clockClass3{
+    text-align: right;
     margin-bottom: 40em;
-    margin-right: -1300px;
+    margin-left: 40em;
 }
 button.big-button:hover {
     background: var(--colorShadeD);
@@ -332,3 +330,6 @@ button.big-button:active::before {
 
 }
 
+.chart{
+    margin-left: -900px;
+}

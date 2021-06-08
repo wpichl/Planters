@@ -5,7 +5,7 @@
 
 namespace config 
 {
-    const std::string ssid = "ESP32-Cam WiFi";
+    const std::string ssid = "Planters";
     const std::string wifiname = "papst";
     const std::string password = "test12345";
     const int SDA = 14; // replace with sda gpio pin address
