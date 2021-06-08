@@ -1,4 +1,12 @@
 
+
+function init()
+{
+    window.location.hash = '#first';
+    startTime();
+}
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const fetchBtn : HTMLElement = <HTMLElement> document.getElementById("fetch");
     fetchBtn.addEventListener("click", (event) => {
@@ -19,6 +27,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 function startTime() {
+
     let today = new Date();
     let h = today.getHours();
     let m = today.getMinutes();
