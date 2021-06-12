@@ -16,7 +16,7 @@ This is the repository for our school project to implement an automatic plant wa
 * [NodeJS](https://nodejs.org/en/) - Strong and very universal package manager
 * [TypeScript Module for NodeJS](https://nodejs.dev/learn/nodejs-with-typescript) - TypeScript transpiler and interpreter
 
-## Drivers needed to detect the MCU (#drivers)
+## Drivers needed to detect the MCU
 The Linux Kernel and macOS can automatically detect the micro processor without the need of installing third-party libraries. However Windows doesnt and needs a specific driver which can be found [here](https://ftdichip.com/wp-content/uploads/2021/02/CDM21228_Setup.zip).
 
 ## SerialMonitor and Output
