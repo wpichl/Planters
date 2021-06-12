@@ -2,15 +2,18 @@
 #define CFG_H
 
 #include "common_includes.h"
+#include <SPIFFS.h>
+
 class cfg
 {
 public:
     cfg(std::string cfgpath);
-    ~cfg(); // close file
-    bool openHandle();
+    ~cfg();
+    void openHandle();
     String loadConfig();
     bool saveConfig(String cfg);
-    bool closeHandle();
+    bool fileExists();
+    void closeHandle();
     bool isHandleOpen();
 
 private:

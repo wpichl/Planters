@@ -9,6 +9,4 @@
 #include <Wire.h>
 #include <SPI.h>
 
-String currentdate();
-
 #endif
