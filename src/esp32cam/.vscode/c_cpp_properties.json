@@ -10,6 +10,7 @@
             "includePath": [
                 "C:/Users/samsepiol/Documents/School/Planters/src/esp32cam/include",
                 "C:/Users/samsepiol/Documents/School/Planters/src/esp32cam/src",
+                "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
                 "C:/Users/samsepiol/Documents/School/Planters/src/esp32cam/.pio/libdeps/esp32cam/Adafruit ADS1X15",
                 "C:/Users/samsepiol/Documents/School/Planters/src/esp32cam/.pio/libdeps/esp32cam/Adafruit BusIO",
                 "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src",
@@ -99,7 +100,6 @@
                 "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src",
                 "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SD/src",
                 "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src",
-                "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
                 "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src",
                 "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src",
                 "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/Update/src",
@@ -113,6 +113,7 @@
                 "path": [
                     "C:/Users/samsepiol/Documents/School/Planters/src/esp32cam/include",
                     "C:/Users/samsepiol/Documents/School/Planters/src/esp32cam/src",
+                    "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
                     "C:/Users/samsepiol/Documents/School/Planters/src/esp32cam/.pio/libdeps/esp32cam/Adafruit ADS1X15",
                     "C:/Users/samsepiol/Documents/School/Planters/src/esp32cam/.pio/libdeps/esp32cam/Adafruit BusIO",
                     "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src",
@@ -202,7 +203,6 @@
                     "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src",
                     "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SD/src",
                     "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SD_MMC/src",
-                    "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
                     "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/SimpleBLE/src",
                     "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src",
                     "C:/Users/samsepiol/.platformio/packages/framework-arduinoespressif32/libraries/Update/src",
