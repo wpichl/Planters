@@ -16,7 +16,11 @@ This is the repository for our school project to implement an automatic plant wa
 * [NodeJS](https://nodejs.org/en/) - Strong and very universal package manager
 * [TypeScript Module for NodeJS](https://nodejs.dev/learn/nodejs-with-typescript) - TypeScript transpiler and interpreter
 
-## How to run
+## Drivers needed to detect the MCU (#drivers)
+The Linux Kernel and macOS can automatically detect the micro processor without the need of installing third-party libraries. However Windows doesnt and needs a specific driver which can be found [here](https://ftdichip.com/wp-content/uploads/2021/02/CDM21228_Setup.zip).
+
+## SerialMonitor and Output
+### Option 1: Platform IO Serial Monitor
 Install [Python 3](https://www.python.org/downloads/) and possibly add the binary to your PATH  
 In order to have a working serial monitor and compiler, Platform IO CLI is necessary
 ```bash
@@ -31,7 +35,19 @@ Finally start the serial monitor
 pio device monitor
 ```
 
+### Option 2: PuTTY's Serial Monitor
+A good alternative is the built in Serial Monitor in the PuTTY program which is normally used for SSH, Telnet and more.
+Download PuTTY from [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and start it up.
+* Change the connection type to "Serial"
+* Change the speed to 11500
+* Specify the port on which the ESP is connected to
+
+The port can be checked via Visual Studio Code in the Platform IO Home under Devices.
+
 ## Folder structure
 * ```/webapp/``` - The Web Application coded in TypeScript
 * ```/src/esp32cam/``` - The source code for the ESP32-Cam
 * ```/doc/``` - Circuit layout, Presentations for the project
+
+## Troubleshooting
+If Platform IO cannot find the upload port nor the CLI or PuTTY, the installation of the FTDI Driver either hasn't been done or was faulty.
