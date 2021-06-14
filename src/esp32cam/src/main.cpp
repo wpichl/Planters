@@ -26,7 +26,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 </body></html>)rawliteral";
 
 ADCHandler adc(config::SDA, config::SCL);
-water water("/stats.txt");
+water water_t("/stats.txt");
 
 static bool waterable()
 {
@@ -72,7 +72,7 @@ void setup() {
     });
     server.on("/stats", HTTP_GET, [](AsyncWebServerRequest *request)
     {
-      request->send(200, "application/json", water.loadConfig());
+      request->send(200, "application/json", water_t.loadConfig());
     });
     server.begin();
   }
@@ -82,6 +82,6 @@ void loop()
 {
   if(waterable())
   {
-    water.waterPlant();
+    water_t.waterPlant();
   }
 }
