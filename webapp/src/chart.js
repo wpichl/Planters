@@ -1,6 +1,6 @@
-var xValues = ["May", "June", "July", "August", "September"];
-var yValues = [30, 22, 26, 32, 11];
-var barColors = ["blue", "blue", "blue", "blue", "blue"];
+var xValues = ["January", "February", "March", "April", "May", "June"];
+var yValues = [30, 22, 26, 32, 11, 28];
+var barColors = ["blue", "blue", "blue", "blue", "blue", "blue"];
 
 new Chart("myChart", {
     type: "bar",
