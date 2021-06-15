@@ -12,9 +12,6 @@ water::~water()
 
 void water::waterPlant()
 {
-    digitalWrite(config::PUMP, HIGH);
-    sleep(5);
-    digitalWrite(config::PUMP, LOW);
     openHandle();
     if(fileExists())
     {

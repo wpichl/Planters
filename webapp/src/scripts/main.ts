@@ -10,12 +10,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         fetch('http://192.168.0.2/sensor')
             .then(response => response.text())
             .then(data => {
-                // Do something with your data
                 console.log(data);
                 const obj = JSON.parse(data);
                 console.log(obj.sensor);
                 const sensordiv : HTMLOutputElement = <HTMLOutputElement> document.getElementById("sensorvalues");
                 sensordiv.innerText = `Water moisture: ${obj.sensor}\n Waterable: ${obj.waterable}`;
+            });
+    });
+    const waterBtn : HTMLElement = <HTMLElement> document.getElementById("water");
+    waterBtn.addEventListener("click", (event) => {
+        fetch('http://192.168.0.2/water')
+            .then(response => response.text())
+            .then(data => {
+                console.log(data);
+                const waterdiv : HTMLOutputElement = <HTMLOutputElement> document.getElementById("watering");
+                waterdiv.innerText = data;
             });
     });
 });

@@ -8,12 +8,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         fetch('http://192.168.0.2/sensor')
             .then(response => response.text())
             .then(data => {
-            // Do something with your data
             console.log(data);
             const obj = JSON.parse(data);
             console.log(obj.sensor);
             const sensordiv = document.getElementById("sensorvalues");
             sensordiv.innerText = `Water moisture: ${obj.sensor}\n Waterable: ${obj.waterable}`;
+        });
+    });
+    const waterBtn = document.getElementById("water");
+    waterBtn.addEventListener("click", (event) => {
+        fetch('http://192.168.0.2/water')
+            .then(response => response.text())
+            .then(data => {
+            console.log(data);
+            const waterdiv = document.getElementById("watering");
+            waterdiv.innerText = data;
         });
     });
 });

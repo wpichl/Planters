@@ -26,7 +26,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 </body></html>)rawliteral";
 
 ADCHandler adc(config::SDA, config::SCL);
-water water("/stats.txt");
+water water_t("/stats.txt");
 
 static bool waterable()
 {
@@ -51,6 +51,7 @@ void setup() {
   wh.Dump();
   wh.Connect();
   adc.Init();
+  water_t.openHandle();
   if(wh.isConnected())
   {
     DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
@@ -72,7 +73,19 @@ void setup() {
     });
     server.on("/stats", HTTP_GET, [](AsyncWebServerRequest *request)
     {
-      request->send(200, "application/json", water.loadConfig());
+      request->send(200, "application/json", water_t.loadConfig());
+    });
+    server.on("/water", HTTP_GET, [](AsyncWebServerRequest *request)
+    {
+      if(waterable())
+      {
+        request->send(200, "text/plain", "Watering successful");
+        water_t.waterPlant();
+      }
+      else
+      {
+        request->send(200, "text/plain", "Plant doesn't need water");
+      }
     });
     server.begin();
   }
