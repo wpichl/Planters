@@ -27,7 +27,7 @@ void WiFiHandler::Connect()
 
 	Serial.println();
 
-	Serial.print("Connecting to Wifi");
+	Serial.print("Connecting to WiFi");
 
 	WiFi.begin(mWiFiName.c_str(), mPassword.c_str());
 	while (WiFi.status() != WL_CONNECTED)
@@ -38,7 +38,7 @@ void WiFiHandler::Connect()
 
 	Serial.println("");
 	Serial.println("WiFi connected");
-	Serial.println("IP address: ");
+	Serial.print("IP address: ");
 	Serial.println(WiFi.localIP());
 
 	mStatus = true;
