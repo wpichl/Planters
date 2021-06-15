@@ -27,7 +27,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 
 ADCHandler adc(config::SDA, config::SCL);
 water water_t("/stats.txt");
-
+bool watering = false;
 static bool waterable()
 {
   bool isWaterable = false;
@@ -46,7 +46,7 @@ static bool waterable()
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
   Serial.begin(11500);
-  pinMode(12, OUTPUT);
+  pinMode(config::PUMP, OUTPUT);
   WiFiHandler wh(config::ssid, config::IP, config::Gateway, config::Subnetmask, config::wifiname, config::password);
   wh.Dump();
   wh.Connect();
@@ -81,6 +81,7 @@ void setup() {
       {
         request->send(200, "text/plain", "Watering successful");
         water_t.waterPlant();
+        watering = true;
       }
       else
       {
@@ -93,5 +94,11 @@ void setup() {
 
 void loop()
 {
-
+  if(watering)
+  {
+    digitalWrite(config::PUMP, HIGH);
+    delay(5000);
+    digitalWrite(config::PUMP, LOW);
+    watering = false;
+  }
 }
