@@ -1,28 +1,21 @@
-
-
 function init()
 {
     window.location.hash = '#first';
     startTime();
 }
 
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const fetchBtn : HTMLElement = <HTMLElement> document.getElementById("fetch");
     fetchBtn.addEventListener("click", (event) => {
-        let data  = '';
-        console.log("fetching");
-        fetch('http://192.168.8.121/sensor')
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(myJson) {
-
-                data=myJson;
+        fetch('http://192.168.0.2/sensor')
+            .then(response => response.text())
+            .then(data => {
+                // Do something with your data
                 console.log(data);
-
-                const output: HTMLOutputElement = <HTMLOutputElement> document.getElementById("output");
-                output.innerText = data;
+                const obj = JSON.parse(data);
+                console.log(obj.sensor);
+                const sensordiv : HTMLOutputElement = <HTMLOutputElement> document.getElementById("sensorvalues");
+                sensordiv.innerText = `Water moisture: ${obj.sensor}\n Waterable: ${obj.waterable}`;
             });
     });
 });

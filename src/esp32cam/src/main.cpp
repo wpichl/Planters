@@ -26,7 +26,7 @@ const char index_html[] PROGMEM = R"rawliteral(
 </body></html>)rawliteral";
 
 ADCHandler adc(config::SDA, config::SCL);
-water water_t("/stats.txt");
+water water("/stats.txt");
 
 static bool waterable()
 {
@@ -44,7 +44,7 @@ static bool waterable()
 }
 
 void setup() {
-  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector    
+  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0); //disable brownout detector
   Serial.begin(11500);
   pinMode(12, OUTPUT);
   WiFiHandler wh(config::ssid, config::IP, config::Gateway, config::Subnetmask, config::wifiname, config::password);
@@ -72,7 +72,7 @@ void setup() {
     });
     server.on("/stats", HTTP_GET, [](AsyncWebServerRequest *request)
     {
-      request->send(200, "application/json", water_t.loadConfig());
+      request->send(200, "application/json", water.loadConfig());
     });
     server.begin();
   }
@@ -80,8 +80,5 @@ void setup() {
 
 void loop()
 {
-  if(waterable())
-  {
-    water_t.waterPlant();
-  }
+
 }
