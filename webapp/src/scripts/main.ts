@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 const obj = JSON.parse(data);
                 console.log(obj.sensor);
                 const sensordiv : HTMLOutputElement = <HTMLOutputElement> document.getElementById("sensorvalues");
-                sensordiv.innerText = `Water moisture: ${obj.sensor}\n Waterable: ${obj.waterable}`;
+                sensordiv.innerText = `Plant dryness: ${obj.dryness}%\n Waterable: ${obj.waterable}`;
             });
     });
     const waterBtn : HTMLElement = <HTMLElement> document.getElementById("water");

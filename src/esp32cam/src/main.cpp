@@ -14,6 +14,8 @@
 #include "Arduino.h"
 #include "esp_camera.h"
 #include "ESPAsyncWebServer.h"
+
+#include "math_t.h"
 int16_t value = 0;
 
 AsyncWebServer server(80);
@@ -66,7 +68,7 @@ void setup() {
     {
       StaticJsonDocument<200> data;
       String response;
-      data["sensor"] = adc.getADC();
+      data["dryness"] = math::convert<int>(adc.getADC(), 19500, 21500, 0, 100);
       data["waterable"] = waterable();
       serializeJson(data, response);
       request->send(200, "application/json", response);
