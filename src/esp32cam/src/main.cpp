@@ -27,6 +27,8 @@ const char index_html[] PROGMEM = R"rawliteral(
 <h1>test</h1>
 </body></html>)rawliteral";
 
+bool automatic = false;
+
 ADCHandler adc(config::SDA, config::SCL);
 water water_t("/stats.txt");
 bool watering = false;
@@ -68,8 +70,16 @@ void setup() {
     {
       StaticJsonDocument<200> data;
       String response;
-      data["dryness"] = math::convert<int>(adc.getADC(), 19500, 21500, 0, 100);
-      data["waterable"] = waterable();
+      int value = math::convert<int>(adc.getADC(), 19500, 21500, 0, 100);
+      data["dryness"] = value;
+      if (value > 20)
+      {
+        data["waterable"] = true;
+      }
+      else
+      {
+        data["waterable"] = false;
+      }
       serializeJson(data, response);
       request->send(200, "application/json", response);
     });
@@ -79,7 +89,8 @@ void setup() {
     });
     server.on("/water", HTTP_GET, [](AsyncWebServerRequest *request)
     {
-      if(waterable())
+      int value = math::convert<int>(adc.getADC(), 19500, 21500, 0, 100);
+      if(value > 20)
       {
         request->send(200, "text/plain", "Watering successful");
         water_t.waterPlant();
@@ -99,7 +110,7 @@ void loop()
   if(watering)
   {
     digitalWrite(config::PUMP, HIGH);
-    delay(5000);
+    delay(20000);
     digitalWrite(config::PUMP, LOW);
     watering = false;
   }

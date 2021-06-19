@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .then(data => {
             const chartdata = JSON.parse(data);
             new Chart("myChart", {
-                type: "bar",
+                type: "line",
                 data: {
                     labels: Object.keys(chartdata),
                     datasets: [{
