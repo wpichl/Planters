@@ -8,5 +8,9 @@
 #include <Adafruit_ADS1X15.h>
 #include <Wire.h>
 #include <SPI.h>
+#include <ArduinoJson.h>
+#include <SPIFFS.h>
+#include <soc/soc.h>
+#include <soc/rtc_cntl_reg.h>
 
 #endif
