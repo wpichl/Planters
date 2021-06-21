@@ -54,6 +54,28 @@ void setup() {
     {
       request->send(200, "application/json", water_t.loadConfig());
     });
+    server.on("/enableautomatic", HTTP_GET, [](AsyncWebServerRequest *request)
+    {
+      if(automatic)
+      {
+        request->send_P(200, "text/plain", "automatic watering already enabled");
+      }
+      else
+      {
+        request->send_P(200, "text/plain", "automatic watering enabled");
+      }
+    });
+    server.on("/disableautomatic", HTTP_GET, [](AsyncWebServerRequest *request)
+    {
+      if(!automatic)
+      {
+        request->send_P(200, "text/plain", "automatic watering already disabled");
+      }
+      else
+      {
+        request->send_P(200, "text/plain", "automatic watering disabled");
+      }
+    });
     server.on("/water", HTTP_GET, [](AsyncWebServerRequest *request)
     {
       int value = math::convert<int>(adc.getADC(), 19500, 21500, 0, 100);
@@ -80,5 +102,16 @@ void loop()
     delay(20000);
     digitalWrite(config::PUMP, LOW);
     watering = false;
+  }
+
+  if(automatic)
+  {
+    int value = math::convert<int>(adc.getADC(), 19500, 21500, 0, 100);
+    if(value > 20)
+    {
+      digitalWrite(config::PUMP, HIGH);
+      delay(10000);
+      digitalWrite(config::PUMP, LOW);
+    }
   }
 }
