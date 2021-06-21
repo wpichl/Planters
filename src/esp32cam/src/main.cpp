@@ -23,12 +23,21 @@ void setup() {
   wh.Connect();
   adc.Init();
   water_t.openHandle();
+  if(!SPIFFS.begin(true))
+  {
+    Serial.println("An Error has occurred while mounting SPIFFS");
+    return;
+  }
   if(wh.isConnected())
   {
     DefaultHeaders::Instance().addHeader("Access-Control-Allow-Origin", "*");
-    server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
-      request->send_P(200, "text/plain", "Planters");
+    server.serveStatic("/", SPIFFS, "/website/");
+
+    server.on("/", HTTP_GET, [](AsyncWebServerRequest *request)
+    {
+      request->send(SPIFFS, "/website/index.html", "text/html");
     });
+
     server.onNotFound([](AsyncWebServerRequest *request)
     {
       request->send(404, "text/plain", "404 Not found");
@@ -56,6 +65,7 @@ void setup() {
     });
     server.on("/enableautomatic", HTTP_GET, [](AsyncWebServerRequest *request)
     {
+      automatic = true;
       if(automatic)
       {
         request->send_P(200, "text/plain", "automatic watering already enabled");
@@ -67,6 +77,7 @@ void setup() {
     });
     server.on("/disableautomatic", HTTP_GET, [](AsyncWebServerRequest *request)
     {
+      automatic = false;
       if(!automatic)
       {
         request->send_P(200, "text/plain", "automatic watering already disabled");

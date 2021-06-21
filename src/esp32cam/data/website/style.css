@@ -1,0 +1,473 @@
+:root {
+    --backgroundColor: white;
+    --colorShadeA: rgb(2, 99, 71);
+    --colorShadeB: rgb(140, 190, 156);
+    --colorShadeC: rgb(150, 232, 195);
+    --colorShadeD: rgb(187, 232, 220);
+    --colorShadeE: rgb(200, 255, 230);
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 15em;
+}
+.text0{
+    margin-top: -15px;
+    margin-left: 5em;
+    width: 150px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+    /*Downloaded from https://www.codeseek.co/kacpertn4t/css-animated-plant-EXpaqQ */
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40em;
+    height: 100vh;
+    margin-left: 4em;
+}
+
+.base {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 25px;
+    background: linear-gradient(to right, saddlebrown 0%, saddlebrown 50%, saddlebrown 51%, saddlebrown 100%);
+    border-radius: 4px;
+    border: 3px solid saddlebrown;
+    box-shadow: 0 3px 0 #fff;
+    perspective: 90px;
+    transform-style: preserve-3d;
+}
+.base:before {
+    content: " ";
+    position: absolute;
+    left: 7px;
+    top: 20px;
+    height: 60px;
+    width: 80px;
+    border-radius: 10px;
+    background: linear-gradient(to right, saddlebrown 0%, saddlebrown 50%, saddlebrown 51%, saddlebrown 100%);
+    border: 3px solid saddlebrown;
+    transform-origin: 50% 0;
+    transform: rotateX(-18deg);
+}
+
+.blade {
+    position: absolute;
+    bottom: 8px;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    z-index: -1;
+}
+.blade:before, .blade:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    border-top: 0;
+    border-radius: 50%;
+}
+
+.blade-left-s {
+    height: 60px;
+    width: 50px;
+    left: -20px;
+    animation: wave 3s infinite ease-in-out;
+}
+.blade-left-s:before {
+    right: 0;
+    height: 120px;
+    width: 90px;
+    border-right: 20px solid green;
+}
+.blade-left-s:after {
+    top: 1px;
+    right: 6px;
+    height: 120px;
+    width: 90px;
+    transform: rotateZ(15deg);
+    border-right: 18px solid green;
+}
+
+.blade-left-l {
+    height: 100px;
+    width: 80px;
+    left: -35px;
+    animation: wave2 4s infinite ease-in-out;
+}
+.blade-left-l:before {
+    right: 2px;
+    height: 190px;
+    width: 160px;
+    border-right: 25px solid green;
+    transform: rotateZ(20deg);
+}
+.blade-left-l:after {
+    right: 7px;
+    height: 190px;
+    width: 160px;
+    border-right: 18px solid green;
+    transform: rotateZ(25deg);
+}
+
+.blade-right-s {
+    height: 50px;
+    width: 80px;
+    right: -40px;
+    animation: wave2 3.2s -0.5s infinite ease-in-out;
+}
+.blade-right-s:before {
+    left: 0;
+    height: 190px;
+    width: 100px;
+    border-left: 22px solid green;
+}
+.blade-right-s:after {
+    left: 15px;
+    height: 190px;
+    width: 100px;
+    border-left: 13px solid green;
+    transform: rotateZ(-10deg);
+}
+
+.blade-right-l {
+    height: 75px;
+    width: 80px;
+    right: -27px;
+    animation: wave 3.2s -1s infinite ease-in-out;
+}
+.blade-right-l:before {
+    left: 0;
+    height: 190px;
+    width: 160px;
+    border-left: 26px solid green;
+}
+.blade-right-l:after {
+    left: 6px;
+    height: 190px;
+    width: 160px;
+    border-left: 20px solid green;
+    transform: rotateZ(-10deg);
+}
+
+.blade-center {
+    height: 120px;
+    width: 90px;
+    left: -20px;
+    animation: wave 3s -1.2s infinite ease-in-out;
+}
+.blade-center:before {
+    right: 10px;
+    height: 240px;
+    width: 140px;
+    border-right: 28px solid green;
+    transform: rotateZ(15deg);
+}
+.blade-center:after {
+    right: 15px;
+    height: 240px;
+    width: 140px;
+    border-right: 17px solid green;
+    transform: rotateZ(15deg);
+}
+
+@keyframes wave {
+    0% {
+        transform: rotateZ(3deg) translateZ(-1px);
+    }
+    25% {
+        transform: rotateZ(-4deg) translateZ(-1px);
+    }
+    50% {
+        transform: rotateZ(2deg) translateZ(-1px);
+    }
+    75% {
+        transform: rotateZ(-6deg) translateZ(-1px);
+    }
+    100% {
+        transform: rotateZ(3deg) translateZ(-1px);
+    }
+}
+@keyframes wave2 {
+    0% {
+        transform: rotateZ(0deg) translateZ(-1px);
+    }
+    25% {
+        transform: rotateZ(-3deg) translateZ(-1px);
+    }
+    50% {
+        transform: rotateZ(3deg) translateZ(-1px);
+    }
+    75% {
+        transform: rotateZ(-1deg) translateZ(-1px);
+    }
+    100% {
+        transform: rotateZ(0deg) translateZ(-1px);
+    }
+}
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+* {
+    box-sizing: border-box;
+}
+
+.clock{
+    margin-left: 55em;
+    color: black;
+    margin-bottom: 13em;
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 1rem;
+    overflow: hidden;
+    background: var(--backgroundColor);
+    background: linear-gradient(-45deg, #FAEBD7, #F0F8FF, #F5F5DC, #FAEBD7);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+.clockClass{
+    margin-right: -890px;
+}
+
+html, body {
+    width: 100%;
+    height:100%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+button {
+    display: inline-block;
+    cursor: pointer;
+    border: 0;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color:var(--colorShadeA);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+}
+.buttons{
+    align-content: center;
+    margin-right: 135em;
+    width: 120%;
+}
+.big-button{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+button.big-button {
+    outline: none;
+    padding: 1em 2em;
+    border-radius: 1em;
+    width: 180%;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+button.big-button::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+.clock2{
+    color: black;
+}
+.clockClass2{
+    margin-bottom: 40em;
+    margin-right: -800px;
+}
+.clock3{
+    color: black;
+}
+.waterButtonClass{
+    margin-right: -750px;
+}
+.btn{
+    font-size: 20px;
+}
+
+.btn:hover{
+    background-color: cornflowerblue;
+}
+
+.clockClass3{
+    text-align: right;
+    margin-bottom: 40em;
+    margin-left: 40em;
+}
+button.big-button:hover {
+    background: var(--colorShadeD);
+    transform: translate(0, 0.375em);
+}
+
+button.big-button:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+}
+
+button.big-button:active {
+    transform: translate(0em, 0.75em);
+}
+
+button.big-button:active::before {
+    transform: translate3d(0, 0, -1em);
+
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+
+}
+
+.chart{
+    margin-left: -900px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --secondary-color: #422C73;
+}
+
+.container {
+    font-family: Montserrat, sans-serif;
+}
+nav a {
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--secondary-color);
+}
+
+section {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 0;
+    opacity: 0;
+    transition: all ease-in .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1 {
+    color: #fff;
+    font-size: 50px;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+/* Styles applied on trigger */
+section:target {
+    opacity: 1;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+section:target h1 {
+    opacity: 0;
+    animation: 2s fadeIn forwards .5s;
+}
+
+
+
+@keyframes fadeIn {
+    100% { opacity:1 }
+}
