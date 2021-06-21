@@ -22,9 +22,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
 });
 
-const toggle = document.getElementById('inputToggle');
-let enabled = true;
-toggle.addEventListener('click', (event)=>{
-    enabled = !enabled;
-});
 

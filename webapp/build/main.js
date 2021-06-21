@@ -25,6 +25,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
             waterdiv.innerText = data;
         });
     });
+    let enabled = true;
+    const enabledBtn = document.getElementById("inputToggle");
+    enabledBtn.addEventListener("click", (event) => {
+        enabled = !enabled;
+        if (enabled) {
+            fetch('http://192.168.0.2/enableautomatic')
+                .then(response => response.text())
+                .then(data => {
+                console.log(data);
+                const outputdiv = document.getElementById("buttonoutput");
+                outputdiv.innerText = data;
+            });
+        }
+        else {
+            fetch('http://192.168.0.2/disableautomatic')
+                .then(response => response.text())
+                .then(data => {
+                console.log(data);
+                const outputdiv = document.getElementById("buttonoutput");
+                outputdiv.innerText = data;
+            });
+        }
+    });
 });
 function startTime() {
     let today = new Date();
